@@ -3,6 +3,7 @@ let tamanhoSenha = 12;
 numeroSenha.textContent = tamanhoSenha;
 const checkbox = document.querySelectorAll('.checkbox');
 const botoes = document.querySelectorAll('.parametro-senha-botao'); 
+const forcasenha = document.querySelector('.forca');
 botoes[0].onclick = diminuiTamanho;
 botoes[1].onclick = aumentaTamanho;
 function diminuiTamanho(){
@@ -49,5 +50,12 @@ function geraSenha(){
     senha = senha + alfabeto[numeroAleatorio];
     }
     campoSenha.value = senha;
+    classificasenha();
     }
+function classificasenha(){
+    forcasenha.classList.remove('fraca','media','forte');
+    if (tamanhoSenha > 11){
+        forcasenha.classList.add('forte');
+    }
+}
 
