@@ -1,4 +1,4 @@
-document.querySelector('.paramero-senha-botao');
+const numeroSenha = document.querySelector('.parametro-senha-texto');
 let tamanhoSenha = 12;
 numeroSenha.textContent = tamanhoSenha;
 const checkbox = document.querySelectorAll('.checkbox');
@@ -50,3 +50,4 @@ function geraSenha(){
     }
     campoSenha.value = senha;
     }
+
