@@ -3,7 +3,7 @@ let tamanhoSenha = 12;
 numeroSenha.textContent = tamanhoSenha;
 const checkbox = document.querySelectorAll('.checkbox');
 const botoes = document.querySelectorAll('.parametro-senha-botao'); 
-const forcasenha = document.querySelector('.forca');
+const forcaSenha = document.querySelector('.forca');
 botoes[0].onclick = diminuiTamanho;
 botoes[1].onclick = aumentaTamanho;
 function diminuiTamanho(){
@@ -51,17 +51,17 @@ function geraSenha(){
     senha = senha + alfabeto[numeroAleatorio];
     }
     campoSenha.value = senha;
-    classificasenha(alfabeto.length);
+    classificaSenha(alfabeto.length);
     }
-function classificasenha(tamanhoAlfabeto){
+function classificaSenha(tamanhoAlfabeto){
     let entropia = tamanhoSenha * Math.log2(alfabeto.length);
-    forcasenha.classList.remove('fraca','media','forte');
+    forcaSenha.classList.remove('fraca','media','forte');
     if (entropia > 57){
-        forcasenha.classList.add('forte');
+        forcaSenha.classList.add('forte');
     } else if (entropia > 35 && entropia < 57){
-        forcasenha.classList.add('media');
+        forcaSenha.classList.add('media');
     } else if (entropia < 35){
-        forcasenha.classList.add('fraca');
-}
+        forcaSenha.classList.add('fraca');
+    }
 }
 valorEntropia.textContent = 2**Math.floor(entropia)/(100e6*60*60*24);
